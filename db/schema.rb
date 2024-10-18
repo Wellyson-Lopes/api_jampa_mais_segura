@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_18_223316) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_18_230915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,4 +37,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_18_223316) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "incidents", force: :cascade do |t|
+    t.bigint "crime_type_id", null: false
+    t.decimal "latitude", precision: 10, scale: 6, null: false
+    t.decimal "longitude", precision: 10, scale: 6, null: false
+    t.string "city", null: false
+    t.string "district"
+    t.string "address"
+    t.date "date", null: false
+    t.time "time"
+    t.boolean "disabled", default: false
+    t.text "observations"
+    t.string "vehicle_description"
+    t.string "weapon_type"
+    t.integer "number_of_individuals"
+    t.string "target"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["crime_type_id"], name: "index_incidents_on_crime_type_id"
+  end
+
+  add_foreign_key "incidents", "crime_types"
 end
