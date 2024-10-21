@@ -22,5 +22,5 @@ databases:
   - name: my-rails-db
     region: oregon
     plan: free
-    postgresVersion: 13
+    postgresVersion: 9.3
     replication: false
