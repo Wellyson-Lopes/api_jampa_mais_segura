@@ -2,7 +2,7 @@ services:
   - type: web
     name: my-rails-app
     env: ruby
-    region: oregon    # Escolha a região mais próxima (pode ser "oregon", "frankfurt", etc.)
+    region: oregon
     buildCommand: bundle install && bundle exec rake assets:precompile db:migrate
     startCommand: bundle exec puma -C config/puma.rb
     envVars:
@@ -13,14 +13,12 @@ services:
       - key: RAILS_ENV
         value: production
       - key: SECRET_KEY_BASE
-        sync: false  # Set sync false se você não quiser que seja armazenado no Git
-    autoDeploy: true   # True para deploy automático quando há mudanças no repositório
-    healthCheckPath: "/"   # Caminho para verificar a saúde da aplicação
-    plan: free         # Pode ser 'free', 'starter', ou outro plano pago dependendo do uso
+        sync: false
+    autoDeploy: true
+    healthCheckPath: "/"
+    plan: free
 
 databases:
   - name: my-rails-db
     region: oregon
     plan: free
-    postgresVersion: 9.3
-    replication: false
