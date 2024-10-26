@@ -1,2 +1,4 @@
-module Admins::RegistrationsHelper
+module Admins
+  module RegistrationsHelper
+  end
 end

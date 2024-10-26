@@ -1,6 +1,5 @@
 module Admins
   class HomeController < Admins::ApplicationAdminController
-    def index
-    end
+    def index; end
   end
 end
