@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :admins, path: 'admin', controllers: {
-  sessions: 'admins/sessions',
-  registrations: 'admins/registrations'
+  devise_for :users
+  devise_for :admins, path: "admin", controllers: {
+  sessions: "admins/sessions",
+  registrations: "admins/registrations"
 }
-  root 'admins/home#index'
+  root "admins/home#index"
+
+  namespace :api do
+    namespace :v1 do
+      post "login", to: "users#login"
+      post "users", to: "users#create"
+      patch "users/update", to: "users#update"
+      delete "users/delete", to: "users#destroy"
+
+    end
+  end
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
