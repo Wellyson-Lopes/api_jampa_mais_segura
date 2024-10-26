@@ -11,9 +11,9 @@ class User < ApplicationRecord
   private
 
   def valid_cpf_format
-    unless cpf_valido?(cpf)
-      errors.add(:cpf, "inválido")
-    end
+    return if cpf_valido?(cpf)
+
+    errors.add(:cpf, "inválido")
   end
 
   def cpf_valido?(cpf)

@@ -18,7 +18,6 @@ module Admins
       @admin = current_admin
     end
 
-
     def update
       @admin = current_admin
       if @admin.update(admin_params)
