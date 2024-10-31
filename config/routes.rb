@@ -12,6 +12,12 @@ Rails.application.routes.draw do
       post "users", to: "users#create"
       patch "users/update", to: "users#update"
       delete "users/delete", to: "users#destroy"
+
+      namespace :incidents do
+        get "list", to: "incidents#index"
+        get "list_of_crime_types", to: "incidents#list_of_crime_types"
+        post "new", to: "incidents#create"
+      end
     end
   end
 
