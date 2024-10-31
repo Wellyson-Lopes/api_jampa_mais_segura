@@ -30,7 +30,7 @@ module Api
           params.require(:incident).permit(
             :crime_type_id, :latitude, :longitude, :city, :address, :district, :date,
             :time, :disabled, :observations, :vehicle_description, :weapon_type,
-            :number_of_individuals, :target
+            :number_of_individuals, :target, :user_id
           )
         end
       end

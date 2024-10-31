@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :jwt_authenticatable, jwt_revocation_strategy: self
 
+  has_many :incidents, dependent: :destroy
+
   validates :cpf, presence: true, uniqueness: { message: "indisponível" }, on: :create
   validate :valid_cpf_format
   before_validation :normalize_cpf
