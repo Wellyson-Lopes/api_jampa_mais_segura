@@ -6,7 +6,7 @@ module Api
         before_action :authenticate_user!
 
         def index
-          incidents = Incident.all
+          incidents = Incident.find_by(user_id: @current_user.id)
           render json: incidents, status: :ok
         end
 
