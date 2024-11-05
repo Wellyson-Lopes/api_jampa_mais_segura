@@ -85,6 +85,13 @@ GEM
       execjs (~> 2)
     base64 (0.2.0)
     bcrypt (3.1.20)
+    better_html (2.1.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.4)
@@ -133,6 +140,13 @@ GEM
     dry-core (1.0.1)
       concurrent-ruby (~> 1.0)
       zeitwerk (~> 2.6)
+    erb_lint (0.7.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop (>= 1)
+      smart_properties
     erubi (1.13.0)
     execjs (2.9.1)
     ffi (1.17.0-aarch64-linux-gnu)
@@ -295,6 +309,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    smart_properties (1.17.0)
     sorbet-runtime (0.5.11618)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -353,6 +368,7 @@ DEPENDENCIES
   devise
   devise-jwt
   dotenv-rails
+  erb_lint
   foreman
   importmap-rails
   jbuilder

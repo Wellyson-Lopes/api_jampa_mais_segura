@@ -27,17 +27,15 @@
 
         </ul>
         <form class="">
-          <%= link_to "logout" , destroy_admin_session_path,  data: { turbo_method: :delete }, class:"btn btn-primary"%>
+          <%= link_to "logout" , destroy_admin_session_path,  data: { turbo_method: :delete }, class:"btn btn-primary" %>
           <%= link_to "editar cadastro", edit_admin_registration_path, class:"btn btn-primary" %>
-
         </form>
-
       </div>
     </div>
   </nav>
-  <div id="map" 
-     data-controller="map" 
-     data-map-points-value="<%= @dados.to_json %>" 
-     style="height: 500px; width: 100%;"></div>
-
+  <div id="map"
+    data-controller="map"
+     data-map-points-value="<%= @dados.to_json %>"
+     style="height: 500px; width: 100%;">
+  </div>
 </div>
