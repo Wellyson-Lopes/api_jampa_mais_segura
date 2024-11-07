@@ -1,41 +1,23 @@
 <%# está view foi criada apenas com intuito de testar o bootstratp, em breve vai ser mudada %>
 <div class="container-flouid">
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="/">
-        <h3>Your Logo</h3>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Member</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Courses</a>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Blog</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Event</a>
-          </li>
-
-        </ul>
-        <form class="">
-          <%= link_to "logout" , destroy_admin_session_path,  data: { turbo_method: :delete }, class:"btn btn-primary" %>
-          <%= link_to "editar cadastro", edit_admin_registration_path, class:"btn btn-primary" %>
-        </form>
-      </div>
-    </div>
-  </nav>
   <div id="map"
     data-controller="map"
      data-map-points-value="<%= @dados.to_json %>"
-     style="height: 500px; width: 100%;">
+     style="height: 500px; width: 100%;" class="mt-5">
   </div>
+  <div data-controller="graph">
+    <div data-graph-target="data" data-graph-incidents="<%= @incidents.to_json %>"></div>
+    <div data-graph-target="graph">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">Distribuição de Incidentes</h5>
+        </div>
+        <div class="card-body">
+          <div data-graph-target="chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
