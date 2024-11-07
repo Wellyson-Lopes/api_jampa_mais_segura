@@ -9,6 +9,9 @@ module Admins
           popup: 'Informação opcional'
         }
       end
+      @incidents = Incident.joins(:crime_type)
+                           .group('crime_types.name')
+                           .count
     end
   end
 end
