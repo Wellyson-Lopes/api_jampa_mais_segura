@@ -1,10 +1,9 @@
 <%# está view foi criada apenas com intuito de testar o bootstratp, em breve vai ser mudada %>
 <div class="container-flouid">
-
   <div id="map"
     data-controller="map"
      data-map-points-value="<%= @dados.to_json %>"
-     style="height: 500px; width: 100%;" class="mt-5">
+     style="height: 500px; width: 100%;">
   </div>
   <div data-controller="graph">
     <div data-graph-target="data" data-graph-incidents="<%= @incidents.to_json %>"></div>

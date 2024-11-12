@@ -15,3 +15,39 @@
  */
 
  @import "bootstrap";
+
+ // Definindo uma classe personalizada para o flash_messages
+.flash-alert-box {
+  border-radius: 4px;
+  box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.5);
+  color: $white;
+  left: 50%;
+  margin-left: -200px;
+  padding: 12px;
+  position: fixed;
+  text-align: center;
+  top: 64px;
+  width: 400px;
+  z-index: 100;
+}
+
+.flash--success {
+  background-color: $success;
+}
+
+.flash--notice {
+  background-color: $primary;
+}
+
+.flash--error {
+  background-color: $danger;
+}
+
+.flash--alert {
+  background-color: $warning;
+  color: $black;
+}
+
+.flash--info {
+  border-left: 5px solid $info;
+}

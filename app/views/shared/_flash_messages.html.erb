@@ -1,0 +1,5 @@
+<% flash.each do |key, value| %>
+  <div data-controller="flash" class="flash flash-alert-box <%= flash_class(key.to_sym) %>" role="alert">
+    <%= value %>
+  </div>
+<% end %>
