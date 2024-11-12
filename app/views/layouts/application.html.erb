@@ -6,13 +6,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_importmap_tags %>
     <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" %>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.34.0"></script>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column vh-100">
+    <header>
+      <%= render "shared/nav" %>
+    </header>
+    <main class="container-fluid mt-5">
+      <div class="mt-5">
+        <%= render "shared/flash_messages" %>
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
