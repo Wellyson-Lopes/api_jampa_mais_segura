@@ -7,7 +7,7 @@ export default class extends Controller {
 
   connect() {
     // Inicializa o mapa na div do elemento onde Stimulus está conectado
-    this.map = L.map(this.element).setView([-7.179535, -34.919297], 13);
+    this.map = L.map(this.element).setView([-7.170190, -34.854321], 13);
 
     // Adiciona o tile layer do OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

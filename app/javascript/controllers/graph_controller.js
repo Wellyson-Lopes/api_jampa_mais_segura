@@ -25,7 +25,7 @@ export default class extends Controller {
       labels: labels,
       series: series,
       title: {
-        text: "Distribuição de Incidentes"
+        text: "Distribuição de Ocorrências"
       }
     };
 
