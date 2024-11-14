@@ -1,22 +1,27 @@
-<%# está view foi criada apenas com intuito de testar o bootstratp, em breve vai ser mudada %>
-<div class="container-flouid">
-  <div id="map"
-    data-controller="map"
-     data-map-points-value="<%= @dados.to_json %>"
-     style="height: 500px; width: 100%;">
-  </div>
-  <div data-controller="graph">
-    <div data-graph-target="data" data-graph-incidents="<%= @incidents.to_json %>"></div>
-    <div data-graph-target="graph">
-      <div class="card">
-        <div class="card-header">
-          <h5 class="card-title">Distribuição de Incidentes</h5>
-        </div>
-        <div class="card-body">
-          <div data-graph-target="chart"></div>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Coluna para o Mapa -->
+    <div class="col-md-6">
+      <div id="map"
+        data-controller="map"
+        data-map-points-value="<%= @dados.to_json %>"
+        style="height: 600px; width: 100%;">
+      </div>
+    </div>
+
+    <!-- Coluna para o Gráfico -->
+    <div class="col-md-6" data-controller="graph">
+      <div data-graph-target="data" data-graph-incidents="<%= @incidents.to_json %>"></div>
+      <div data-graph-target="graph">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Distribuição de Ocorrências em João Pessoa</h5>
+          </div>
+          <div class="card-body">
+            <div data-graph-target="chart" style="height: 500px;"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
