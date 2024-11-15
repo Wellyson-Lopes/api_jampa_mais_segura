@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
   devise_for :admins, path: "admin", controllers: {
     sessions: "admins/sessions",
     registrations: "admins/registrations"
   }
   root "admins/home#index"
+
+  namespace :admins do
+    get "home/map", to: "home#map"
+  end
 
   namespace :api do
     namespace :v1 do

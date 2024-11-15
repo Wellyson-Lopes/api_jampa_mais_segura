@@ -1,6 +1,13 @@
 module Admins
   class HomeController < Admins::ApplicationAdminController
-    def index
+    before_action :set_dados, only: %i[index map]
+    def index; end
+
+    def map; end
+
+    private
+
+    def set_dados
       @ocorrencias = Incident.all
       @dados = @ocorrencias.map do |ocorrencia|
         {
