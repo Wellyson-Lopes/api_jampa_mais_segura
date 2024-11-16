@@ -16,15 +16,14 @@ module Api
         end
 
         def create
-          incident = Incident.new(incident_params)
           response_address = Search::GeolocationAddress.new(latitude: params[:latitude], longitude: params[:longitude]).call
 
-          if response_address[:error].nil?
+          render json: { errors: "Erro ao buscar endereço: #{response_address[:error]}" }, status: :unprocessable_entity unless response_address[:error].nil?
 
-            incident.address = response_address[:address]
-            incident.district = response_address[:district]
-            incident.city = response_address[:city]
-          end
+          incident = Incident.new(incident_params)
+          incident.address = response_address[:address]
+          incident.district = response_address[:district]
+          incident.city = response_address[:city]
 
           if incident.save
             render json: incident, status: :created
