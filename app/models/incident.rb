@@ -34,4 +34,14 @@
 class Incident < ApplicationRecord
   belongs_to :crime_type
   belongs_to :user
+
+  validate :validate_city_and_district
+
+  private
+
+  def validate_city_and_district
+    return if city == "João Pessoa" && district.present?
+
+    errors.add(:base, "A ocorrência deve ser na cidade de João Pessoa e em um bairro válido.")
+  end
 end

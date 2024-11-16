@@ -1,13 +1,14 @@
 module Search
   class GeolocationAddress
     include HTTParty
-    base_uri 'https://nominatim.openstreetmap.org'
+    base_uri 'https://us1.locationiq.com'
 
-    attr_reader :latitude, :longitude
+    attr_reader :latitude, :longitude, :api_key
 
     def initialize(latitude:, longitude:)
       @latitude = latitude
       @longitude = longitude
+      @api_key = ENV['MAP_SECRET_API_KEY']
     end
 
     def call
@@ -17,7 +18,8 @@ module Search
     private
 
     def reverse_geocode
-      response = self.class.get("/reverse", query: {
+      response = self.class.get("/v1/reverse", query: {
+                                  key: api_key,
                                   lat: latitude,
                                   lon: longitude,
                                   format: 'json'
