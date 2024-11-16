@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <div class="row">
-    <!-- Coluna para o Mapa -->
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
@@ -13,12 +12,11 @@
           <div id="map"
         data-controller="map"
         data-map-points-value="<%= @dados.to_json %>"
-        style="height: 500px; width: 100%;">
+        style="height: 475px; width: 100%;">
           </div>
         </div>
       </div>
     </div>
-    <!-- Coluna para o Gráfico -->
     <div class="col-md-6" data-controller="graph">
       <div data-graph-target="data" data-graph-incidents="<%= @incidents.to_json %>"></div>
       <div data-graph-target="graph">
