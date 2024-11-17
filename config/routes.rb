@@ -21,6 +21,10 @@ Rails.application.routes.draw do
         get "list_of_crime_types", to: "incidents#list_of_crime_types"
         post "new", to: "incidents#create"
       end
+
+      namespace :crime_types do
+        post "new", to: "crime_types#create"
+      end
     end
   end
 
