@@ -10,9 +10,10 @@
         </div>
         <div class="card-body">
           <div id="map"
-        data-controller="map"
-        data-map-points-value="<%= @dados.to_json %>"
-        style="height: 475px; width: 100%;">
+            data-controller="map"
+            data-map-points-value="<%= @dados.to_json %>"
+            data-map-center-value="<%= @map_center.to_json %>"
+            style="height: 475px; width: 100%;">
           </div>
         </div>
       </div>

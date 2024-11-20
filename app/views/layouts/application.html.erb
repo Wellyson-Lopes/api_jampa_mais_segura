@@ -14,10 +14,10 @@
 
   <body class="d-flex flex-column vh-100">
     <header>
-      <%= render "shared/nav" %>
+      <%= render "shared/nav" unless @skip_navbar %>
     </header>
-    <main class="container-fluid mt-5">
-      <div class="mt-5">
+    <main class="container-fluid <%= 'mt-5' unless @skip_navbar %>">
+      <div class="<%= 'mt-5' unless @skip_navbar %>">
         <%= render "shared/flash_messages" %>
         <%= yield %>
       </div>
