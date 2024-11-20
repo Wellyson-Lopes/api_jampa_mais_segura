@@ -1,7 +1,8 @@
 <div class="card-header">
   <div id="map"
-        data-controller="map"
-        data-map-points-value="<%= @dados.to_json %>"
-        style="height: 600px; width: 100%;">
+     class="w-100 vh-100"
+     data-controller="map"
+     data-map-points-value="<%= @dados.to_json %>"
+     data-map-center-value="<%= @map_center.to_json %>">
   </div>
 </div>
